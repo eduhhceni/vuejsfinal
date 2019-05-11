@@ -58,7 +58,7 @@
             >
               <div class="block-4 text-center border">
                 <figure class="block-4-image">
-                  <transition name="fade" mode="out-in" @before-enter="beforeEnter" appear>
+                  <transition name="fade" mode="out-in" appear>
                     <a @click="goTodetail(data.productId)">
                       <img :src="data.image" alt="Image placeholder" class="img-fluid shop-image">
                     </a>
@@ -302,7 +302,7 @@ export default {
   methods: {
     goTodetail(prodId) {
       let proId = prodId;
-      this.$router.push({ name: "details", params: { Pid: proId } });
+      this.$router.push({ name: "detalhes", params: { Pid: proId } });
     }
   }
 };

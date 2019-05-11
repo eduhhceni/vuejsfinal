@@ -48,11 +48,11 @@
 
 <script>
 export default {
-  name: "details",
+  name: "detalhes",
   data() {
     return {
       proId: this.$route.params.Pid,
-      title: "details",
+      title: "detalhes",
       products: [
         {
           productTitle: "Thermaltake Nemesis",

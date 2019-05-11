@@ -7,36 +7,6 @@ AOS.init({
 jQuery(document).ready(function($) {
     "use strict";
 
-    var slider = function() {
-        $(".nonloop-block-3").owlCarousel({
-            center: false,
-            items: 1,
-            loop: false,
-            stagePadding: 15,
-            margin: 20,
-            nav: true,
-            navText: [
-                '<span class="icon-arrow_back">',
-                '<span class="icon-arrow_forward">'
-            ],
-            responsive: {
-                600: {
-                    margin: 20,
-                    items: 2
-                },
-                1000: {
-                    margin: 20,
-                    items: 3
-                },
-                1200: {
-                    margin: 20,
-                    items: 3
-                }
-            }
-        });
-    };
-    slider();
-
     var siteMenuClone = function() {
         $('<div class="site-mobile-menu"></div>').prependTo(".site-wrap");
 
@@ -204,37 +174,4 @@ jQuery(document).ready(function($) {
         );
     };
     siteSliderRange();
-
-    var siteMagnificPopup = function() {
-        $(".image-popup").magnificPopup({
-            type: "image",
-            closeOnContentClick: true,
-            closeBtnInside: false,
-            fixedContentPos: true,
-            mainClass: "mfp-no-margins mfp-with-zoom", // class to remove default margin from left and right side
-            gallery: {
-                enabled: true,
-                navigateByImgClick: true,
-                preload: [0, 1] // Will preload 0 - before current, and 1 after the current image
-            },
-            image: {
-                verticalFit: true
-            },
-            zoom: {
-                enabled: true,
-                duration: 300 // don't foget to change the duration also in CSS
-            }
-        });
-
-        $(".popup-youtube, .popup-vimeo, .popup-gmaps").magnificPopup({
-            disableOn: 700,
-            type: "iframe",
-            mainClass: "mfp-fade",
-            removalDelay: 160,
-            preloader: false,
-
-            fixedContentPos: false
-        });
-    };
-    siteMagnificPopup();
 });

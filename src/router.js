@@ -38,10 +38,10 @@ export default new Router({
                 import ("./views/Contact.vue")
         },
         {
-            path: "/details/:Pid",
-            name: "details",
+            path: "/detalhes/:Pid",
+            name: "detalhes",
             component: () =>
-                import ("./views/Details.vue")
+                import ("./views/Detalhes.vue")
         },
         {
             path: "/shop",
@@ -56,7 +56,7 @@ export default new Router({
                 import ("./views/ThankYou.vue")
         }
     ],
-    scrollBehavior(to, from, savedPosition) {
+    scrollBehavior() {
         // retorna ao topo da página
         return { x: 0, y: 0 };
     }
