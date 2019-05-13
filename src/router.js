@@ -54,6 +54,11 @@ export default new Router({
             name: "thankyou",
             component: () =>
                 import ("./views/ThankYou.vue")
+        },
+        {
+            path: '*',
+            component: () =>
+                import ("./views/404.vue")
         }
     ],
     scrollBehavior() {

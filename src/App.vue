@@ -1,7 +1,7 @@
 <template>
   <!-- arquivo que junta todas as peças do site (cabeçalho, conteudo e rodapé) -->
   <div id="app">
-    <div class="site-wrap" style="background-color: rgb(249, 251, 254);">
+    <div class="site-wrap">
       <nav-bar/>
       <router-view/>
       <Footer/>

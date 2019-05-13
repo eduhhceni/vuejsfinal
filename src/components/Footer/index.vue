@@ -14,9 +14,6 @@
                   <router-link to="/shop">Categorias</router-link>
                 </li>
                 <li>
-                  <a>Funcionalidades</a>
-                </li>
-                <li>
                   <router-link to="/cart">Carrinho</router-link>
                 </li>
               </ul>
@@ -31,19 +28,6 @@
                 </li>
                 <li>
                   <router-link to="/about">Desenvolvimento do site</router-link>
-                </li>
-              </ul>
-            </div>
-            <div class="col-md-6 col-lg-4">
-              <ul class="list-unstyled">
-                <li>
-                  <a>Area de interesse</a>
-                </li>
-                <li>
-                  <a>Hardwares</a>
-                </li>
-                <li>
-                  <a>Softwares</a>
                 </li>
               </ul>
             </div>

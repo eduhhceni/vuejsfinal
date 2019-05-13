@@ -56,7 +56,7 @@
               v-for="(data,index) in products"
               :key="index"
             >
-              <div class="block-4 text-center border">
+              <div class="block-4 text-center border produto">
                 <figure class="block-4-image">
                   <transition name="fade" mode="out-in" appear>
                     <a @click="goTodetail(data.productId)">

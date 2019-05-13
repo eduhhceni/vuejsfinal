@@ -137,8 +137,8 @@
         </div>
         <div class="row">
           <div class="col-md-12">
-            <carousel :per-page="3">
-              <slide>
+            <carousel :per-page="3" class="carousel">
+              <slide class="slide">
                 <div class="block-4 text-center">
                   <figure class="block-4-image">
                     <img
@@ -156,7 +156,7 @@
                   </div>
                 </div>
               </slide>
-              <slide>
+              <slide class="slide">
                 <div class="block-4 text-center">
                   <figure class="block-4-image">
                     <img
@@ -174,7 +174,7 @@
                   </div>
                 </div>
               </slide>
-              <slide>
+              <slide class="slide">
                 <div class="block-4 text-center">
                   <figure class="block-4-image">
                     <img
@@ -192,7 +192,7 @@
                   </div>
                 </div>
               </slide>
-              <slide>
+              <slide class="slide">
                 <div class="block-4 text-center">
                   <figure class="block-4-image">
                     <img
@@ -210,7 +210,7 @@
                   </div>
                 </div>
               </slide>
-              <slide>
+              <slide class="slide">
                 <div class="block-4 text-center" style="max-height:382px;">
                   <figure class="block-4-image">
                     <img
