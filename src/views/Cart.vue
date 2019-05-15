@@ -7,7 +7,7 @@
 
 <script>
 // @ is an alias to /src
-import Cart from "@/components/pages/cart.vue";
+import Cart from "../pages/cart.vue";
 
 export default {
   name: "cart",

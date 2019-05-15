@@ -7,7 +7,7 @@
 
 <script>
 // @ is an alias to /src
-import Checkout from "@/components/pages/checkout.vue";
+import Checkout from "../pages/checkout.vue";
 
 export default {
   name: "checkout",

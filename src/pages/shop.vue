@@ -50,29 +50,16 @@
 
           <!-- produtos -->
           <div class="row mb-5">
-            <div
-              class="col-sm-6 col-lg-4 mb-4"
-              data-aos="fade-up"
-              v-for="(data,index) in products"
-              :key="index"
-            >
-              <div class="block-4 text-center border produto">
-                <figure class="block-4-image">
-                  <transition name="fade" mode="out-in" appear>
-                    <a @click="goTodetail(data.productId)">
-                      <img :src="data.image" alt="Image placeholder" class="img-fluid shop-image">
-                    </a>
-                  </transition>
-                </figure>
-                <div class="block-4-text p-4">
-                  <a @click="goTodetail(data.productId)">
-                    <h3>{{data.productTitle}}</h3>
-                  </a>
-                  <p class="mb-0">{{data.productInfo}}</p>
-                  <p class="text-primary font-weight-bold">R$ {{ data.productPrice }}</p>
-                </div>
-              </div>
-            </div>
+            <ListaProdutos
+              v-for="listaProdutos in produtos"
+              :key="listaProdutos.id"
+              :title="listaProdutos.title"
+              :info="listaProdutos.info"
+              :image1="listaProdutos.image1"
+              :price="listaProdutos.price"
+              :produtos="listaProdutos.produtos"
+              :id="listaProdutos.id"
+            />
           </div>
           <!-- /produtos -->
 
@@ -192,112 +179,23 @@
 </template>
 
 <script type="text/javascript">
+import ListaProdutos from "./products.vue";
+
+import api from "@/api";
+
 export default {
-  data() {
+  name: "listaprodutos",
+  components: {
+    ListaProdutos
+  },
+  data: function() {
     return {
-      title: "Home",
-      products: [
-        {
-          productTitle: "Thermaltake Nemesis",
-          productInfo: "Mouse Gamer Thermaltake Nemesis Switch RGB 120000DPI",
-          productPrice: "291,90",
-          image:
-            "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/89197d5dca145b4b8bae0bd39c25e653/m/o/mo-nms-wdoobk-014.jpg",
-          productId: 1
-        },
-        {
-          productTitle: "Thermaltake X1",
-          productInfo:
-            "Teclado Mecânico Thermaltake X1 RGB Switch Cherry MX Blue",
-          productPrice: "776,92",
-          image:
-            "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/89197d5dca145b4b8bae0bd39c25e653/k/b/kb-tpx-blbrpb-015.jpg",
-          productId: 2
-        },
-        {
-          productTitle: "Corsair K63",
-          productInfo: "Teclado Corsair K63 Compacto LED Azul Cherry MX Red",
-          productPrice: "571,91",
-          image:
-            "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/89197d5dca145b4b8bae0bd39c25e653/c/h/ch-9145030-br6.jpg",
-          productId: 3
-        },
-        {
-          productTitle: "Corsair K70",
-          productInfo:
-            "Teclado Mecânico Corsair K70 MK.2 RapidFire RGB Switch MX Cherry Black",
-          productPrice: "834,64",
-          image:
-            "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/89197d5dca145b4b8bae0bd39c25e653/c/a/ca-9011153-na1_1.jpg",
-          productId: 4
-        },
-        {
-          productTitle: "Steelseries Qck Edge XL",
-          productInfo: "Mousepad Steelseries Qck Edge XL 900X300X2MM",
-          productPrice: "158,30",
-          image:
-            "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/89197d5dca145b4b8bae0bd39c25e653/6/3/63824.jpg",
-          productId: 5
-        },
-        {
-          productTitle: "Steelseries Rival 710",
-          productInfo: "Mouse Steelseries Rival 710",
-          productPrice: "539,92",
-          image:
-            "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/89197d5dca145b4b8bae0bd39c25e653/6/2/62334.jpg",
-          productId: 6
-        },
-        {
-          productTitle: "C3Tech MB-200SI",
-          productInfo: "Mouse Bungee C3Tech com Hub USB/MicroSD MB-200SI",
-          productPrice: "77,99",
-          image:
-            "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/89197d5dca145b4b8bae0bd39c25e653/m/b/mb-200si.jpg",
-          productId: 7
-        },
-        {
-          productTitle: "Havit HV-MS837",
-          productInfo: "Mouse Gamer Havit RGB 7000DPI HV-MS837",
-          productPrice: "100,10",
-          image:
-            "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/89197d5dca145b4b8bae0bd39c25e653/h/v/hv-ms8374.jpg",
-          productId: 8
-        },
-        {
-          productTitle: "Logitech G332",
-          productInfo: "Headset Gamer Logitech G332 Stereo Preto/Vermelho",
-          productPrice: "294,90",
-          image:
-            "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/89197d5dca145b4b8bae0bd39c25e653/9/8/981-0007556.jpg",
-          productId: 9
-        },
-        {
-          productTitle: "Asus Rog Claymore",
-          productInfo:
-            "Teclado Mecânico Asus Rog Claymore RGB Switch Cherry MX Red",
-          productPrice: "1.629,94",
-          image:
-            "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/89197d5dca145b4b8bae0bd39c25e653/9/0/90mp00e0-b0ua0033.jpg",
-          productId: 10
-        },
-        {
-          productTitle: "Logitech G Pro",
-          productInfo: "Mouse Gamer Logitech G Pro Hero RGB 16000DPI USB",
-          productPrice: "239,90",
-          image:
-            "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/89197d5dca145b4b8bae0bd39c25e653/9/1/910-005536.jpg",
-          productId: 11
-        },
-        {
-          productTitle: "PCYES! FPS KNIFE",
-          productInfo: "Mousepad PCYES! FPS KNIFE 500X400X3MM",
-          productPrice: "39,90",
-          image:
-            "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/89197d5dca145b4b8bae0bd39c25e653/f/k/fk50x401.jpg",
-          productId: 12
-        }
-      ]
+      produtos: []
     };
+  },
+  async created() {
+    const { data } = await api.get(`/produtos`);
+    this.produtos = data;
   },
   methods: {
     goTodetail(prodId) {

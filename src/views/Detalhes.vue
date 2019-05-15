@@ -6,7 +6,7 @@
 </template>
 <script>
 // @ is an alias to /src
-import Detalhes from "@/components/pages/detalhes.vue";
+import Detalhes from "../pages/detalhes.vue";
 
 export default {
   name: "detalhes",

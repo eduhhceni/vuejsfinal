@@ -56,6 +56,12 @@ export default new Router({
                 import ("./views/ThankYou.vue")
         },
         {
+            path: "/listaprodutos",
+            name: "listaprodutos",
+            component: () =>
+                import ("./views/ListaProdutos.vue")
+        },
+        {
             path: '*',
             component: () =>
                 import ("./views/404.vue")

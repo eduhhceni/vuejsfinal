@@ -7,7 +7,7 @@
 
 <script>
 // @ is an alias to /src
-import Contact from "@/components/pages/contact.vue";
+import Contact from "../pages/contact.vue";
 
 export default {
   name: "contact",
