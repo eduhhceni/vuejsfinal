@@ -35,18 +35,26 @@
             <div class="mb-5">
               <div class="input-group mb-3" style="max-width: 120px;">
                 <div class="input-group-prepend">
-                  <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
-                </div>
+                  <button
+                    class="btn btn-outline-primary js-btn-minus"
+                    type="button"
+                    @click="minus()"
+                  >&minus;</button>
+                </div>-todo-
                 <input
                   type="text"
                   class="form-control text-center"
-                  value="1"
+                  :value="quantity"
                   placeholder
                   aria-label="Example text with button addon"
                   aria-describedby="button-addon1"
                 >
                 <div class="input-group-append">
-                  <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
+                  <button
+                    class="btn btn-outline-primary js-btn-plus"
+                    type="button"
+                    @click="plus()"
+                  >&plus;</button>
                 </div>
               </div>
             </div>
@@ -61,15 +69,11 @@
 </template>
 
 <script>
-import ListaProdutos from "./products.vue";
-
 import api from "@/api";
 
 export default {
-  name: "listaprodutos",
-  components: {
-    ListaProdutos
-  },
+  name: "ListaCarrinho",
+  props: ["quantity"],
   data: function() {
     return {
       proId: this.$route.params.Pid,
@@ -79,6 +83,17 @@ export default {
   async created() {
     const { data } = await api.get(`/produtos`);
     this.produtos = data;
+  },
+  methods: {
+    // TODO plus e minus faltam alterar no banco e limitar > 0 e < itens disponíveis
+    plus() {
+      this.quantity = this.quantity + 1;
+      this.total = parseFloat(this.price) * parseFloat(this.quantity);
+    },
+    minus() {
+      this.quantity = this.quantity - 1;
+      this.total = parseFloat(this.price) * parseFloat(this.quantity);
+    }
   }
 };
 </script>

@@ -11,7 +11,7 @@
             <div class="col-md-6 col-lg-4">
               <ul class="list-unstyled">
                 <li>
-                  <router-link to="/shop">Categorias</router-link>
+                  <router-link to="/shop/1">Categorias</router-link>
                 </li>
                 <li>
                   <router-link to="/cart">Carrinho</router-link>
@@ -35,7 +35,7 @@
         </div>
         <div class="col-md-6 col-lg-3 mb-4 mb-lg-0">
           <h3 class="footer-heading mb-4">Promoções</h3>
-          <router-link to="/shop" class="block-6">
+          <router-link to="/shop/1" class="block-6">
             <img
               src="https://thegamingsetup.com/wp-content/uploads/bb-plugin/cache/differentmouseshapes-panorama.jpg"
               alt="Image placeholder"

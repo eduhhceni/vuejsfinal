@@ -44,7 +44,7 @@ export default new Router({
                 import ("./views/Detalhes.vue")
         },
         {
-            path: "/shop",
+            path: "/shop/:Pid",
             name: "shop",
             component: () =>
                 import ("./views/Shop.vue")
@@ -54,6 +54,12 @@ export default new Router({
             name: "thankyou",
             component: () =>
                 import ("./views/ThankYou.vue")
+        },
+        {
+            path: "/search/:search",
+            name: "search",
+            component: () =>
+                import ("./views/Search.vue")
         },
         {
             path: "/listaprodutos",

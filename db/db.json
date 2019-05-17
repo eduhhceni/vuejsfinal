@@ -1,8 +1,32 @@
 {
+    "carrinho": [{
+            "title": "Thermaltake Nemesis",
+            "price": "291.90",
+            "quantity": 1,
+            "image1": "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/89197d5dca145b4b8bae0bd39c25e653/m/o/mo-nms-wdoobk-014.jpg",
+            "id": 1
+        },
+        {
+            "title": "Thermaltake X1",
+            "price": "776.92",
+            "quantity": 1,
+            "image1": "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/89197d5dca145b4b8bae0bd39c25e653/k/b/kb-tpx-blbrpb-015.jpg",
+            "id": 2
+        },
+        {
+            "title": "Corsair K63",
+            "price": "571.91",
+            "quantity": 2,
+            "image1": "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/89197d5dca145b4b8bae0bd39c25e653/c/h/ch-9145030-br6.jpg",
+            "id": 3
+        }
+    ],
     "produtos": [{
             "title": "Thermaltake Nemesis",
             "info": "Mouse Gamer Thermaltake Nemesis Switch RGB 120000DPI",
-            "price": "291,90",
+            "price": "291.90",
+            "categoria": "mouse",
+            "cor": "rgb",
             "image1": "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/89197d5dca145b4b8bae0bd39c25e653/m/o/mo-nms-wdoobk-014.jpg",
             "image2": "https://www.terabyteshop.com.br/img/produtos/m/mouse-thermaltake-tt-esports-nemesis-optical-rgb-mo-nms-wdoobk-01_67103.jpg",
             "image3": "https://www.terabyteshop.com.br/img/produtos/m/mouse-thermaltake-tt-esports-nemesis-optical-rgb-mo-nms-wdoobk-01_67105.jpg",
@@ -11,7 +35,9 @@
         {
             "title": "Thermaltake X1",
             "info": "Teclado Mecânico Thermaltake X1 RGB Switch Cherry MX Blue",
-            "price": "776,92",
+            "price": "776.92",
+            "categoria": "teclado",
+            "cor": "rgb",
             "image1": "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/89197d5dca145b4b8bae0bd39c25e653/k/b/kb-tpx-blbrpb-015.jpg",
             "image2": "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/a931fab3436c8de63f3cc480a85799ce/k/b/kb-tpx-blbrpb-012.jpg",
             "image3": "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/a931fab3436c8de63f3cc480a85799ce/k/b/kb-tpx-blbrpb-011.jpg",
@@ -20,7 +46,9 @@
         {
             "title": "Corsair K63",
             "info": "Teclado Corsair K63 Compacto LED Azul Cherry MX Red",
-            "price": "571,91",
+            "price": "571.91",
+            "categoria": "teclado",
+            "cor": "azul",
             "image1": "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/89197d5dca145b4b8bae0bd39c25e653/c/h/ch-9145030-br6.jpg",
             "image2": "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/a931fab3436c8de63f3cc480a85799ce/c/h/ch-9145030-na3.jpg",
             "image3": "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/a931fab3436c8de63f3cc480a85799ce/c/h/ch-9145030-na4.jpg",
@@ -29,7 +57,9 @@
         {
             "title": "Corsair K70",
             "info": "Teclado Mecânico Corsair K70 MK.2 RapidFire RGB Switch MX Cherry Black",
-            "price": "834,64",
+            "price": "834.64",
+            "categoria": "teclado",
+            "cor": "rgb",
             "image1": "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/89197d5dca145b4b8bae0bd39c25e653/c/a/ca-9011153-na1_1.jpg",
             "image2": "https://www.corsair.com/medias/sys_master/images/images/h3e/h4b/9171333316638/-CH-9109014-BR-Gallery-K70-RGB-MK2-BR-04.png",
             "image3": "https://www.corsair.com/medias/sys_master/images/images/h58/he8/9171424935966/-CH-9109014-BR-Gallery-K70-RGB-MK2-BR-01.png",
@@ -38,7 +68,9 @@
         {
             "title": "Steelseries Qck Edge XL",
             "info": "Mousepad Steelseries Qck Edge XL 900X300X2MM",
-            "price": "158,30",
+            "price": "158.30",
+            "categoria": "mousepad",
+            "cor": "preto",
             "image1": "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/89197d5dca145b4b8bae0bd39c25e653/6/3/63824.jpg",
             "image2": "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/a931fab3436c8de63f3cc480a85799ce/6/3/638242.jpg",
             "image3": "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/a931fab3436c8de63f3cc480a85799ce/6/3/638241.jpg",
@@ -47,7 +79,9 @@
         {
             "title": "Steelseries Rival 710",
             "info": "Mouse Steelseries Rival 710",
-            "price": "539,92",
+            "price": "539.92",
+            "categoria": "mouse",
+            "cor": "rgb",
             "image1": "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/89197d5dca145b4b8bae0bd39c25e653/6/2/62334.jpg",
             "image2": "https://images0.kabum.com.br/produtos/fotos/99090/mouse-gamer-steelseries-rival-710-rgb-12000dpi-preto-62334__1541764688_gg.jpg",
             "image3": "https://images0.kabum.com.br/produtos/fotos/99090/mouse-gamer-steelseries-rival-710-rgb-12000dpi-preto-62334_1541764678_gg.jpg",
@@ -56,7 +90,9 @@
         {
             "title": "C3Tech MB-200SI",
             "info": "Mouse Bungee C3Tech com Hub USB/MicroSD MB-200SI",
-            "price": "77,99",
+            "price": "77.99",
+            "categoria": "bungee",
+            "cor": "verdee",
             "image1": "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/89197d5dca145b4b8bae0bd39c25e653/m/b/mb-200si.jpg",
             "image2": "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/a931fab3436c8de63f3cc480a85799ce/m/b/mb-200si1.jpg",
             "image3": "http://www.c3technology.com.br/fotos/460x460/413020190100_02_MOUSE%20BUNGEE%20C-HUB%20LEITOR%20MICROSD%20MB-200SI%20C3.jpg",
@@ -65,7 +101,9 @@
         {
             "title": "Havit HV-MS837",
             "info": "Mouse Gamer Havit RGB 7000DPI HV-MS837",
-            "price": "100,10",
+            "price": "100.10",
+            "categoria": "mouse",
+            "cor": "rgb",
             "image1": "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/89197d5dca145b4b8bae0bd39c25e653/h/v/hv-ms8374.jpg",
             "image2": "https://images8.kabum.com.br/produtos/fotos/100728/mouse-gamer-havit-rgb-7-botoes-7000dpi-hv-ms837_mouse-gamer-havit-rgb-7-botoes-7000dpi-hv-ms837_1552319104_gg.jpg",
             "image3": "https://images8.kabum.com.br/produtos/fotos/100728/mouse-gamer-havit-rgb-7-botoes-7000dpi-hv-ms837_mouse-gamer-havit-rgb-7-botoes-7000dpi-hv-ms837_1552319106_gg.jpg",
@@ -74,7 +112,9 @@
         {
             "title": "Logitech G332",
             "info": "Headset Gamer Logitech G332 Stereo Preto/Vermelho",
-            "price": "294,90",
+            "price": "294.90",
+            "categoria": "headset",
+            "cor": "vermelho",
             "image1": "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/89197d5dca145b4b8bae0bd39c25e653/9/8/981-0007556.jpg",
             "image2": "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/a931fab3436c8de63f3cc480a85799ce/9/8/981-0007555.jpg",
             "image3": "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/a931fab3436c8de63f3cc480a85799ce/9/8/981-0007551.jpg",
@@ -83,7 +123,9 @@
         {
             "title": "Asus Rog Claymore",
             "info": "Teclado Mecânico Asus Rog Claymore RGB Switch Cherry MX Red",
-            "price": "1.629,94",
+            "price": "1.629.94",
+            "categoria": "teclado",
+            "cor": "rgb",
             "image1": "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/89197d5dca145b4b8bae0bd39c25e653/9/0/90mp00e0-b0ua0033.jpg",
             "image2": "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/a931fab3436c8de63f3cc480a85799ce/9/0/90mp00i0-b0ua005.jpg",
             "image3": "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/a931fab3436c8de63f3cc480a85799ce/9/0/90mp00i0-b0ua004.jpg",
@@ -92,7 +134,9 @@
         {
             "title": "Logitech G Pro",
             "info": "Mouse Gamer Logitech G Pro Hero RGB 16000DPI USB",
-            "price": "239,90",
+            "price": "239.90",
+            "categoria": "mouse",
+            "cor": "rgb",
             "image1": "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/89197d5dca145b4b8bae0bd39c25e653/9/1/910-005536.jpg",
             "image2": "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/a931fab3436c8de63f3cc480a85799ce/9/1/910-0055361.jpg",
             "image3": "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/a931fab3436c8de63f3cc480a85799ce/9/1/910-0055363.jpg",
@@ -101,11 +145,73 @@
         {
             "title": "PCYES! FPS KNIFE",
             "info": "Mousepad PCYES! FPS KNIFE 500X400X3MM",
-            "price": "39,90",
+            "price": "39.90",
+            "categoria": "mousepad",
+            "cor": "preto",
             "image1": "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/89197d5dca145b4b8bae0bd39c25e653/f/k/fk50x401.jpg",
             "image2": "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/a931fab3436c8de63f3cc480a85799ce/f/k/fk50x402.jpg",
             "image3": "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/a931fab3436c8de63f3cc480a85799ce/f/k/fk50x40.jpg",
             "id": 12
+        },
+        {
+            "title": "Corsair Void RGB Wireless",
+            "active": true,
+            "info": "HEADSET CORSAIR VOID RGB WIRELESS DOLBY 7.1 USB GAMING CARBON",
+            "price": "660.00",
+            "categoria": "headset",
+            "cor": "rgb",
+            "image1": "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/a931fab3436c8de63f3cc480a85799ce/c/a/ca-9011132-na.jpg",
+            "image2": "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/a931fab3436c8de63f3cc480a85799ce/c/a/ca-9011132-na2.jpg",
+            "image3": "https://9d5b198e653b6aea.cdn.gocache.net/catalog/product/cache/a931fab3436c8de63f3cc480a85799ce/c/a/ca-9011132-na4.jpg",
+            "id": 13
+        },
+        {
+            "title": "HyperX Fury S Speed",
+            "active": true,
+            "info": "Mousepad Gamer HyperX Fury S Speed, Extra Grande (900x420mm)",
+            "price": "170.00",
+            "categoria": "mousepad",
+            "cor": "cinza",
+            "image1": "https://images0.kabum.com.br/produtos/fotos/98070/98070_1535056653_gg.jpg",
+            "image2": "https://images0.kabum.com.br/produtos/fotos/98070/98070_2_1535056653_gg.jpg",
+            "image3": "https://images0.kabum.com.br/produtos/fotos/98070/98070_1_1535056653_gg.jpg",
+            "id": 14
+        },
+        {
+            "title": "Razer Mamba",
+            "active": true,
+            "info": "Mouse Gamer Razer Mamba Tournament Edition Laser 16.000 DPI",
+            "price": "650.00",
+            "categoria": "mouse",
+            "cor": "rgb",
+            "image1": "https://images3.kabum.com.br/produtos/fotos/68423/68423_index_gg.jpg",
+            "image2": "https://images3.kabum.com.br/produtos/fotos/68423/68423_1443818814_gg.jpg",
+            "image3": "https://images3.kabum.com.br/produtos/fotos/68423/68423_1443818817_gg.jpg",
+            "id": 15
+        },
+        {
+            "title": "Zowie Camade",
+            "active": true,
+            "info": "Mouse Bungee Zowie Camade",
+            "price": "220.00",
+            "categoria": "bungee",
+            "cor": "preto",
+            "image1": "https://images4.kabum.com.br/produtos/fotos/81384/81384_index_gg.jpg",
+            "image2": "https://images4.kabum.com.br/produtos/fotos/81384/81384_1476447876_gg.jpg",
+            "image3": "https://images4.kabum.com.br/produtos/fotos/81384/81384_1476447881_gg.jpg",
+            "id": 16
+        },
+        {
+            "title": "Blackwidow Tournament Chroma",
+            "active": true,
+            "info": "Teclado Razer Blackwidow Tournament Chroma Switch Green",
+            "price": "899.90",
+            "categoria": "teclado",
+            "cor": "rgb",
+            "image1": "https://images2.kabum.com.br/produtos/fotos/75312/75312_index_gg.jpg",
+            "image2": "https://images2.kabum.com.br/produtos/fotos/75312/75312_1458158002_gg.jpg",
+            "image3": "https://images2.kabum.com.br/produtos/fotos/75312/75312_1458158002_gg.jpg",
+            "id": 17
         }
     ]
 }

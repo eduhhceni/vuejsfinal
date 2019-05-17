@@ -11,83 +11,33 @@
                   <th class="product-thumbnail">Foto</th>
                   <th class="product-name">Produto</th>
                   <th class="product-price">Preço</th>
-                  <th class="product-quantity">Quantidade</th>
+                  <th class="product-quantity">
+                    Quantidade
+                    <br>
+                    <h6>-TODO-</h6>
+                  </th>
                   <th class="product-total">Total</th>
-                  <th class="product-remove">Remover</th>
+                  <th class="product-remove">
+                    Remover
+                    <br>
+                    <h6>-TODO-</h6>
+                  </th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td class="product-thumbnail">
-                    <img
-                      src="https://images1.kabum.com.br/produtos/fotos/84441/84441_index_g.jpg"
-                      alt="Image"
-                      class="img-fluid"
-                    >
-                  </td>
-                  <td class="product-name">
-                    <h2 class="h5 text-black">Mouse Razer DeathAdder Elite</h2>
-                  </td>
-                  <td>R$ 349,90</td>
-                  <td>
-                    <div class="input-group mb-3" style="max-width: 120px;">
-                      <div class="input-group-prepend">
-                        <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
-                      </div>
-                      <input
-                        type="text"
-                        class="form-control text-center"
-                        value="1"
-                        placeholder
-                        aria-label="Example text with button addon"
-                        aria-describedby="button-addon1"
-                      >
-                      <div class="input-group-append">
-                        <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
-                      </div>
-                    </div>
-                  </td>
-                  <td>R$ 349,90</td>
-                  <td>
-                    <router-link to="#" class="btn btn-primary btn-sm">X</router-link>
-                  </td>
-                </tr>
-
-                <tr>
-                  <td class="product-thumbnail">
-                    <img
-                      src="https://images-na.ssl-images-amazon.com/images/I/61%2B7sSXmZkL._SX466_.jpg"
-                      alt="Image"
-                      class="img-fluid"
-                    >
-                  </td>
-                  <td class="product-name">
-                    <h2 class="h5 text-black">MousePad Corsair MM300 Extendido</h2>
-                  </td>
-                  <td>R$ 119,90</td>
-                  <td>
-                    <div class="input-group mb-3" style="max-width: 120px;">
-                      <div class="input-group-prepend">
-                        <button class="btn btn-outline-primary js-btn-minus" type="button">&minus;</button>
-                      </div>
-                      <input
-                        type="text"
-                        class="form-control text-center"
-                        value="1"
-                        placeholder
-                        aria-label="Example text with button addon"
-                        aria-describedby="button-addon1"
-                      >
-                      <div class="input-group-append">
-                        <button class="btn btn-outline-primary js-btn-plus" type="button">&plus;</button>
-                      </div>
-                    </div>
-                  </td>
-                  <td>R$ 119,90</td>
-                  <td>
-                    <router-link to="#" class="btn btn-primary btn-sm">X</router-link>
-                  </td>
-                </tr>
+                <ListaCarrinho
+                  v-for="listaCarrinho in carrinho"
+                  :key="listaCarrinho.id"
+                  :title="listaCarrinho.title"
+                  :info="listaCarrinho.info"
+                  :image1="listaCarrinho.image1"
+                  :price="listaCarrinho.price"
+                  :quantity="listaCarrinho.quantity"
+                  :carrinho="listaCarrinho.carrinho"
+                  :id="listaCarrinho.id"
+                />
+                <!-- @deletar="deletarItem"
+                />-->
               </tbody>
             </table>
           </div>
@@ -103,7 +53,7 @@
               </router-link>
             </div>
             <div class="col-md-6">
-              <router-link to="/shop">
+              <router-link to="/shop/1">
                 <button class="btn btn-outline-primary btn-sm btn-block">Continuar Compra</button>
               </router-link>
             </div>
@@ -177,3 +127,74 @@
   </div>
 </template>
 
+<script type="text/javascript">
+import ListaCarrinho from "./cartitem.vue";
+
+import api from "@/api";
+
+export default {
+  name: "listacarrinho",
+  components: {
+    ListaCarrinho
+  },
+  data: function() {
+    return {
+      carrinho: []
+    };
+  },
+  async created() {
+    const { data } = await api.get(`/carrinho`);
+    this.carrinho = data;
+    api
+      .get(`/carrinho`)
+      .then(
+        response => {
+          this.carrinho = response.data;
+          return "Axios";
+        },
+        error => {
+          console.log("Erro capturado no then: ", error);
+          return Promise.reject(error);
+        }
+      )
+      .catch(error => {
+        console.log("Erro capturado no catch: ", error);
+        if (error.response) {
+          this.mensagemErro = `Servidor retornou um erro: ${error.message} ${
+            error.response.statusText
+          }`;
+          console.log("Erro [resposta]: ", error.response);
+        } else if (error.request) {
+          this.mensagemErro = `Erro ao tentar comunicar com o servidor: ${
+            error.message
+          }`;
+          console.log("Erro [requisição]: ", error.request);
+        } else {
+          this.mensagemErro = `Erro ao fazer requisição ao servidor: ${
+            error.message
+          }`;
+        }
+        return "Carrinho";
+      });
+  },
+  methods: {
+    goTodetail(prodId) {
+      let proId = prodId;
+      this.$router.push({ name: "detalhes", params: { Pid: proId } });
+    }
+
+    // TODO remover item do carrinho
+    // async deletarItem(item) {
+    //   const confirmar = window.confirm(`Deseja remover o item?`);
+    //   if (confirmar) {
+    //     console.log("chegou em confirmar");
+    // api.delete(`/carrinho/${id}`).then(response => {
+    //   console.log(`DELETE /carrinho/${id}`, response);
+    //   const indice = this.carrinho.findIndex(t => t.id === id);
+    //   this.carrinho.splice(indice, 1);
+    // });
+    //   }
+    // }
+  }
+};
+</script>

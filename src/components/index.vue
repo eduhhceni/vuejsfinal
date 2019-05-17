@@ -18,7 +18,7 @@
                   style="color: white"
                 >Aqui você encontra os mais variados tipos de periféricos para qualquer tipo de cliente.</p>
                 <p>
-                  <router-link to="/shop" class="btn btn-sm btn-primary">Comprar</router-link>
+                  <router-link to="/shop/1" class="btn btn-sm btn-primary">Comprar</router-link>
                 </p>
               </div>
             </div>
@@ -79,7 +79,7 @@
       <div class="container">
         <div class="row">
           <div class="col-sm-6 col-md-6 col-lg-4 mb-4 mb-lg-0" data-aos="fade" data-aos-delay>
-            <router-link to="/shop" class="block-2-item">
+            <router-link to="/shop/1" class="block-2-item">
               <figure class="image">
                 <img
                   src="https://d2rormqr1qwzpz.cloudfront.net/photos/2014/04/14/59999-img_0458.jpg"
@@ -94,7 +94,7 @@
             </router-link>
           </div>
           <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="100">
-            <router-link to="/shop" class="block-2-item">
+            <router-link to="/shop/1" class="block-2-item">
               <figure class="image">
                 <img
                   src="https://wallpaperplay.com/walls/full/b/1/b/55411.jpg"
@@ -109,7 +109,7 @@
             </router-link>
           </div>
           <div class="col-sm-6 col-md-6 col-lg-4 mb-5 mb-lg-0" data-aos="fade" data-aos-delay="200">
-            <router-link to="/shop" class="block-2-item">
+            <router-link to="/shop/1" class="block-2-item">
               <figure class="image">
                 <img
                   src="https://cdn.thecoolist.com/wp-content/uploads/2017/03/Razer-ManOWar-7.1-gaming-headset.jpg"
@@ -137,97 +137,17 @@
         </div>
         <div class="row">
           <div class="col-md-12">
-            <carousel :per-page="3" class="carousel">
-              <slide class="slide">
-                <div class="block-4 text-center">
-                  <figure class="block-4-image">
-                    <img
-                      src="https://img.olx.com.br/images/08/088922038129681.jpg"
-                      alt="Image placeholder"
-                      class="img-fluid momento"
-                    >
-                  </figure>
-                  <div class="block-4-text p-4">
-                    <h3>
-                      <router-link to="#">Corsair Void RGB Wireless</router-link>
-                    </h3>
-                    <p class="mb-0">Headset</p>
-                    <p class="text-primary font-weight-bold">R$ 660,00</p>
-                  </div>
-                </div>
-              </slide>
-              <slide class="slide">
-                <div class="block-4 text-center">
-                  <figure class="block-4-image">
-                    <img
-                      src="https://gzhls.at/i/08/74/1850874-n8.jpg"
-                      alt="Image placeholder"
-                      class="img-fluid momento"
-                    >
-                  </figure>
-                  <div class="block-4-text p-4">
-                    <h3>
-                      <router-link to="#">Hyper X Fury S Speed</router-link>
-                    </h3>
-                    <p class="mb-0">Mouse Pad</p>
-                    <p class="text-primary font-weight-bold">R$ 170,00</p>
-                  </div>
-                </div>
-              </slide>
-              <slide class="slide">
-                <div class="block-4 text-center">
-                  <figure class="block-4-image">
-                    <img
-                      src="https://oyster.ignimgs.com/wordpress/stg.ign.com/2017/07/Razer-Mamba-stand.jpg"
-                      alt="Image placeholder"
-                      class="img-fluid momento"
-                    >
-                  </figure>
-                  <div class="block-4-text p-4">
-                    <h3>
-                      <router-link to="#">Razer Mamba</router-link>
-                    </h3>
-                    <p class="mb-0">Mouse</p>
-                    <p class="text-primary font-weight-bold">R$ 650,00</p>
-                  </div>
-                </div>
-              </slide>
-              <slide class="slide">
-                <div class="block-4 text-center">
-                  <figure class="block-4-image">
-                    <img
-                      src="https://static.mercadoshops.com/mouse-bungee-benq-zowie-camade-suporte-para-mouse-com-fio_iZ1029143031XvZxXpZ1XfZ243325154-97835138259-6.jpgXsZ243325154xIM.jpg"
-                      alt="Image placeholder"
-                      class="img-fluid momento"
-                    >
-                  </figure>
-                  <div class="block-4-text p-4">
-                    <h3>
-                      <router-link to="#">Ben-Q ZOWIE</router-link>
-                    </h3>
-                    <p class="mb-0">Mouse Bungee</p>
-                    <p class="text-primary font-weight-bold">R$ 220</p>
-                  </div>
-                </div>
-              </slide>
-              <slide class="slide">
-                <div class="block-4 text-center" style="max-height:382px;">
-                  <figure class="block-4-image">
-                    <img
-                      src="https://www.virginmegastore.ae/medias/sys_master/root/hfd/h44/9100951846942/Razer-BlackWidow-X-Tournament-Edition-Chroma-USB-Black-keyboard-694448-Gal-2-Detail.jpg"
-                      alt="Image placeholder"
-                      class="img-fluid momento"
-                    >
-                  </figure>
-                  <div class="block-4-text p-4">
-                    <h3>
-                      <router-link to="#">Razer Blackwidow Tournament Edition Chroma Black</router-link>
-                    </h3>
-                    <p class="mb-0">Telado Mecânico</p>
-                    <p class="text-primary font-weight-bold">R$ 899,90</p>
-                  </div>
-                </div>
-              </slide>
+            <carousel :per-page="5" class="carousel">
+              <ListaProdutos
+                v-for="listaProdutos in produtos"
+                :key="listaProdutos.id"
+                :title="listaProdutos.title"
+                :info="listaProdutos.info"
+                :image1="listaProdutos.image1"
+                :price="listaProdutos.price"
+                :produtos="listaProdutos.produtos"
+                :id="listaProdutos.id"
+              />
             </carousel>
           </div>
         </div>
@@ -244,7 +164,7 @@
         </div>
         <div class="row align-items-center">
           <div class="col-md-12 col-lg-7 mb-5">
-            <router-link to="/shop">
+            <router-link to="/shop/1">
               <img
                 src="https://i.rtings.com/images/reviews/headphones/articles/best/best-gaming-headsets-under-100-medium.jpg"
                 alt="Image placeholder"
@@ -254,7 +174,7 @@
           </div>
           <div class="col-md-12 col-lg-5 text-center pl-md-5">
             <h2>
-              <router-link to="/shop">20% de desconto em todos os headsets da loja</router-link>
+              <router-link to="/shop/1">20% de desconto em todos os headsets da loja</router-link>
             </h2>
             <p class="post-meta mb-4">
               Por
@@ -263,7 +183,7 @@
             </p>
             <p>Todos os headsets da loja estão com 20% de desconto, marcas como: razer, logitech, corsair, hyperx.</p>
             <p>
-              <router-link to="/shop" class="btn btn-primary btn-sm">Comprar</router-link>
+              <router-link to="/shop/1" class="btn btn-primary btn-sm">Comprar</router-link>
             </p>
           </div>
         </div>
@@ -273,14 +193,28 @@
 </template>
 
 <script>
+import ListaProdutos from "../pages/carousel.vue";
+
+import api from "@/api";
+
 export default {
-  name: "home",
-  props: {
-    msg: String
+  name: "listaprodutos",
+  components: {
+    ListaProdutos
+  },
+  data: function() {
+    return {
+      produtos: []
+    };
+  },
+  async created() {
+    const { data } = await api.get(`/produtos`);
+    this.produtos = data.filter(function(u) {
+      return u.active;
+    });
   }
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 </style>

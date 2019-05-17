@@ -19,6 +19,7 @@
                     aria-haspopup="true"
                     aria-expanded="false"
                   >Novidades</button>
+                  <!-- TODO -->
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
                     <a class="dropdown-item" href="#">Mouses</a>
                     <a class="dropdown-item" href="#">Teclados</a>
@@ -27,6 +28,7 @@
                     <a class="dropdown-item" href="#">Mouse Bungees</a>
                   </div>
                 </div>
+                <h6>- TODO -</h6>
                 <!-- ordenar produtos (apenas frontend) -->
                 <div class="btn-group">
                   <button
@@ -35,6 +37,7 @@
                     id="dropdownMenuReference"
                     data-toggle="dropdown"
                   >Ordem</button>
+                  <!-- TODO -->
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
                     <a class="dropdown-item" href="#">Relevância</a>
                     <a class="dropdown-item" href="#">Nome, A - Z</a>
@@ -68,26 +71,20 @@
             <div class="col-md-12 text-center">
               <div class="site-block-27">
                 <ul>
-                  <li>
-                    <router-link to="#">&lt;</router-link>
+                  <li :class="[pageId == 1 ? 'active' : 'inactive']">
+                    <a href="/shop/1">1</a>
                   </li>
-                  <li class="active">
-                    <span>1</span>
+                  <li :class="[pageId == 2 ? 'active' : 'inactive']">
+                    <a href="/shop/2">2</a>
                   </li>
-                  <li>
-                    <router-link to="#">2</router-link>
+                  <li :class="[pageId == 3 ? 'active' : 'inactive']">
+                    <a href="/shop/3">3</a>
                   </li>
-                  <li>
-                    <router-link to="#">3</router-link>
+                  <li :class="[pageId == 4 ? 'active' : 'inactive']">
+                    <a href="/shop/4">4</a>
                   </li>
-                  <li>
-                    <router-link to="#">4</router-link>
-                  </li>
-                  <li>
-                    <router-link to="#">5</router-link>
-                  </li>
-                  <li>
-                    <router-link to="#">&gt;</router-link>
+                  <li :class="[pageId == 5 ? 'active' : 'inactive']">
+                    <a href="/shop/5">5</a>
                   </li>
                 </ul>
               </div>
@@ -98,6 +95,7 @@
         <!-- categorias de produtos -->
         <div class="col-md-3 order-1 mb-5 mb-md-0">
           <div class="border p-4 rounded mb-4" style="background-color: white">
+            <h6>-TODO-</h6>
             <h3 class="mb-3 h6 text-uppercase text-black d-block">Categorias</h3>
             <ul class="list-unstyled mb-0">
               <li class="mb-1">
@@ -134,26 +132,10 @@
           </div>
 
           <div class="border p-4 rounded mb-4" style="background-color: white">
-            <!-- filtro por tamanho -->
-            <div class="mb-4">
-              <h3 class="mb-3 h6 text-uppercase text-black d-block">Tamanho</h3>
-              <label for="s_sm" class="d-flex">
-                <input type="checkbox" id="s_sm" class="mr-2 mt-1">
-                <span class="text-black">Pequeno</span>
-              </label>
-              <label for="s_md" class="d-flex">
-                <input type="checkbox" id="s_md" class="mr-2 mt-1">
-                <span class="text-black">Medio</span>
-              </label>
-              <label for="s_lg" class="d-flex">
-                <input type="checkbox" id="s_lg" class="mr-2 mt-1">
-                <span class="text-black">Grande</span>
-              </label>
-            </div>
-
             <!-- filtro por cor -->
             <div class="mb-4">
-              <h3 class="mb-3 h6 text-uppercase text-black d-block">Color</h3>
+              <h6>-TODO-</h6>
+              <h3 class="mb-3 h6 text-uppercase text-black d-block">Cor</h3>
               <router-link to="#" class="d-flex color-item align-items-center">
                 <span class="bg-danger color d-inline-block rounded-circle mr-2"></span>
                 <span class="text-black">Vermelho</span>
@@ -190,18 +172,17 @@ export default {
   },
   data: function() {
     return {
+      pageId: this.$route.params.Pid,
       produtos: []
     };
   },
   async created() {
     const { data } = await api.get(`/produtos`);
-    this.produtos = data;
-  },
-  methods: {
-    goTodetail(prodId) {
-      let proId = prodId;
-      this.$router.push({ name: "detalhes", params: { Pid: proId } });
-    }
+    this.produtos = data.filter(function(u) {
+      if (u.id > 0 && u.id <= 12) {
+        return u;
+      }
+    });
   }
 };
 </script>

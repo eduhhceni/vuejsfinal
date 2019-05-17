@@ -5,12 +5,11 @@
       <div class="container">
         <div class="row align-items-center">
           <div class="col-6 col-md-4 order-2 order-md-1 site-search-icon text-left">
-            <form action class="site-block-top-search">
+            <form class="site-block-top-search" @submit.prevent="search(3)">
               <span class="icon icon-search2"></span>
               <input type="text" class="form-control border-0" placeholder="Pesquisar">
             </form>
           </div>
-
           <div class="col-12 mb-3 mb-md-0 col-md-4 order-1 order-md-2 text-center">
             <div class="site-logo">
               <router-link to="/" class="js-logo-clone">PeriféricosVue</router-link>
@@ -20,7 +19,7 @@
           <div class="col-6 col-md-4 order-3 order-md-3 text-right">
             <div class="site-top-icons">
               <ul>
-                <li>
+                <!-- <li>
                   <router-link to="#">
                     <span class="icon icon-person"></span>
                   </router-link>
@@ -29,11 +28,11 @@
                   <router-link to="#">
                     <span class="icon icon-heart-o"></span>
                   </router-link>
-                </li>
+                </li>-->
                 <li>
                   <router-link to="/cart" class="site-cart">
                     <span class="icon icon-shopping_cart"></span>
-                    <span class="count">2</span>
+                    <span class="count">{{ carrinho.length }}</span>
                   </router-link>
                 </li>
                 <li class="d-inline-block d-md-none ml-md-0">
@@ -54,7 +53,7 @@
             <router-link to="/">Home</router-link>
           </li>
           <li>
-            <router-link to="/shop">Loja</router-link>
+            <router-link to="/shop/1">Loja</router-link>
           </li>
           <li>
             <router-link to="/about">Sobre</router-link>
@@ -72,7 +71,23 @@
 </template>
 
 <script>
+import api from "@/api";
 export default {
-  name: "NavBar"
+  name: "NavBar",
+  methods: {
+    search(texto) {
+      let pesquisa = texto;
+      this.$router.push({ name: "search", params: { search: pesquisa } });
+    }
+  },
+  data: function() {
+    return {
+      carrinho: 0
+    };
+  },
+  async created() {
+    const { data } = await api.get(`/carrinho`);
+    this.carrinho = data;
+  }
 };
 </script>
