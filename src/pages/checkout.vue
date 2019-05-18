@@ -2,16 +2,18 @@
   <!-- página de checkout -->
   <div class="site-section">
     <div class="container">
-      <div class="row mb-5">
+      <!-- TODO login -->
+      <!-- <div class="row mb-5">
         <div class="col-md-12">
           <div class="border p-4 rounded" role="alert">
             Possui Conta?
             <router-link to="#">Login</router-link>
           </div>
         </div>
-      </div>
+      </div>-->
       <div class="row">
-        <div class="col-md-6 mb-5 mb-md-0">
+        <!-- TODO detalhes cadastro-->
+        <!-- <div class="col-md-6 mb-5 mb-md-0">
           <h2 class="h3 mb-3 text-black">Detalhes da compra</h2>
           <div class="p-3 p-lg-5 border">
             <div class="form-group">
@@ -298,9 +300,10 @@
               ></textarea>
             </div>
           </div>
-        </div>
-        <div class="col-md-6">
-          <div class="row mb-5">
+        </div>-->
+        <div class="col-md-12">
+          <!-- TODO cupom -->
+          <!-- <div class="row mb-5">
             <div class="col-md-12">
               <h2 class="h3 mb-3 text-black">Cupom</h2>
               <div class="p-3 p-lg-5 border">
@@ -320,7 +323,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div>-->
 
           <div class="row mb-5">
             <div class="col-md-12">
@@ -331,39 +334,19 @@
                     <th>Produto</th>
                     <th>Total</th>
                   </thead>
-                  <tbody>
+                  <tbody v-for="(produto,index) in carrinho" :key="index">
                     <tr>
                       <td>
-                        Mouse Razer DeathAdder Elite
-                        <strong class="mx-2">x</strong> 1
+                        {{ produto.title }}
+                        <strong class="mx-2">x</strong>
+                        {{ produto.quantity }}
                       </td>
-                      <td>R$ 349,90</td>
-                    </tr>
-                    <tr>
-                      <td>
-                        MousePad Corsair MM300 Extendido
-                        <strong class="mx-2">x</strong> 1
-                      </td>
-                      <td>R$ 119,90</td>
-                    </tr>
-                    <tr>
-                      <td class="text-black font-weight-bold">
-                        <strong>Subtotal</strong>
-                      </td>
-                      <td class="text-black">R$ 469,80</td>
-                    </tr>
-                    <tr>
-                      <td class="text-black font-weight-bold">
-                        <strong>Total</strong>
-                      </td>
-                      <td class="text-black font-weight-bold">
-                        <strong>R$ 469,80</strong>
-                      </td>
+                      <td>R$ {{ produto.price }}</td>
                     </tr>
                   </tbody>
                 </table>
 
-                <div class="border p-3 mb-3">
+                <!-- <div class="border p-3 mb-3">
                   <h3 class="h6 mb-0">
                     <a
                       class="d-block"
@@ -380,9 +363,9 @@
                       <p class="mb-0">Realize seu pagamento direto utilizando seu ID de compra.</p>
                     </div>
                   </div>
-                </div>
+                </div>-->
 
-                <div class="border p-3 mb-3">
+                <!-- <div class="border p-3 mb-3">
                   <h3 class="h6 mb-0">
                     <a
                       class="d-block"
@@ -399,8 +382,8 @@
                       <p class="mb-0">Preencha suas informações do cartão.</p>
                     </div>
                   </div>
-                </div>
-
+                </div>-->
+                <!-- 
                 <div class="border p-3 mb-5">
                   <h3 class="h6 mb-0">
                     <a
@@ -418,7 +401,7 @@
                       <p class="mb-0">Prossiga para o site do paypal.</p>
                     </div>
                   </div>
-                </div>
+                </div>-->
 
                 <div class="form-group">
                   <button
@@ -435,3 +418,19 @@
     </div>
   </div>
 </template>
+
+<script>
+import api from "@/api";
+
+export default {
+  data: function() {
+    return {
+      carrinho: []
+    };
+  },
+  async created() {
+    const { data } = await api.get(`/carrinho`);
+    this.carrinho = data;
+  }
+};
+</script>

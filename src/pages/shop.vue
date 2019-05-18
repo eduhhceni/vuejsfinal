@@ -10,7 +10,7 @@
               </div>
               <!-- novidades (apenas frontend) -->
               <div class="d-flex">
-                <div class="dropdown mr-1 ml-md-auto">
+                <!-- <div class="dropdown mr-1 ml-md-auto">
                   <button
                     type="button"
                     class="btn btn-secondary btn-sm dropdown-toggle"
@@ -19,7 +19,7 @@
                     aria-haspopup="true"
                     aria-expanded="false"
                   >Novidades</button>
-                  <!-- TODO -->
+                  TODO
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuOffset">
                     <a class="dropdown-item" href="#">Mouses</a>
                     <a class="dropdown-item" href="#">Teclados</a>
@@ -28,8 +28,7 @@
                     <a class="dropdown-item" href="#">Mouse Bungees</a>
                   </div>
                 </div>
-                <h6>- TODO -</h6>
-                <!-- ordenar produtos (apenas frontend) -->
+                ordenar produtos (apenas frontend)
                 <div class="btn-group">
                   <button
                     type="button"
@@ -37,7 +36,7 @@
                     id="dropdownMenuReference"
                     data-toggle="dropdown"
                   >Ordem</button>
-                  <!-- TODO -->
+                  TODO
                   <div class="dropdown-menu" aria-labelledby="dropdownMenuReference">
                     <a class="dropdown-item" href="#">Relevância</a>
                     <a class="dropdown-item" href="#">Nome, A - Z</a>
@@ -46,7 +45,7 @@
                     <a class="dropdown-item" href="#">Preço, crescente</a>
                     <a class="dropdown-item" href="#">Preço, decrescente</a>
                   </div>
-                </div>
+                </div>-->
               </div>
             </div>
           </div>
@@ -92,11 +91,10 @@
           </div>
         </div>
 
-        <!-- categorias de produtos -->
+        <!-- categorias de produtos TODO -->
         <div class="col-md-3 order-1 mb-5 mb-md-0">
-          <div class="border p-4 rounded mb-4" style="background-color: white">
-            <h6>-TODO-</h6>
-            <h3 class="mb-3 h6 text-uppercase text-black d-block">Categorias</h3>
+          <!-- <div class="border p-4 rounded mb-4" style="background-color: white"> -->
+          <!-- <h3 class="mb-3 h6 text-uppercase text-black d-block">Categorias</h3>
             <ul class="list-unstyled mb-0">
               <li class="mb-1">
                 <router-link to="#" class="d-flex">
@@ -128,13 +126,12 @@
                   <span class="text-black ml-auto">(28)</span>
                 </router-link>
               </li>
-            </ul>
-          </div>
+          </ul>-->
+          <!-- </div> -->
 
-          <div class="border p-4 rounded mb-4" style="background-color: white">
-            <!-- filtro por cor -->
-            <div class="mb-4">
-              <h6>-TODO-</h6>
+          <!-- <div class="border p-4 rounded mb-4" style="background-color: white"> -->
+          <!-- filtro por cor  TODO -->
+          <!-- <div class="mb-4">
               <h3 class="mb-3 h6 text-uppercase text-black d-block">Cor</h3>
               <router-link to="#" class="d-flex color-item align-items-center">
                 <span class="bg-danger color d-inline-block rounded-circle mr-2"></span>
@@ -152,8 +149,8 @@
                 <span class="bg-warning color d-inline-block rounded-circle mr-2"></span>
                 <span class="text-black">RGB</span>
               </router-link>
-            </div>
-          </div>
+          </div>-->
+          <!-- </div> -->
         </div>
       </div>
     </div>

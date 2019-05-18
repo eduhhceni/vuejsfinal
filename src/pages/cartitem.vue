@@ -17,7 +17,7 @@
           <button
             class="btn btn-outline-primary js-btn-minus"
             type="button"
-            @click="minus()"
+            @click="quantity > 1 ? minus() : null"
           >&minus;</button>
         </div>
         <input
@@ -29,7 +29,11 @@
           aria-describedby="button-addon1"
         >
         <div class="input-group-append">
-          <button class="btn btn-outline-primary js-btn-plus" type="button" @click="plus()">&plus;</button>
+          <button
+            class="btn btn-outline-primary js-btn-plus"
+            type="button"
+            @click="quantity < 9 ? plus() : null"
+          >&plus;</button>
         </div>
       </div>
     </td>

@@ -14,13 +14,11 @@
                   <th class="product-quantity">
                     Quantidade
                     <br>
-                    <h6>-TODO-</h6>
                   </th>
                   <th class="product-total">Total</th>
                   <th class="product-remove">
                     Remover
                     <br>
-                    <h6>-TODO-</h6>
                   </th>
                 </tr>
               </thead>
@@ -48,9 +46,9 @@
         <div class="col-md-6">
           <div class="row mb-5">
             <div class="col-md-6 mb-3 mb-md-0">
-              <router-link to="/cart">
+              <a href="/cart">
                 <button class="btn btn-primary btn-sm btn-block">Atualizar Carrinho</button>
-              </router-link>
+              </a>
             </div>
             <div class="col-md-6">
               <router-link to="/shop/1">
@@ -58,7 +56,8 @@
               </router-link>
             </div>
           </div>
-          <div class="row">
+          <!-- TODO cupom -->
+          <!-- <div class="row">
             <div class="col-md-12">
               <label class="text-black h4" for="coupon">Cupom</label>
               <p>Digite seu cupom.</p>
@@ -74,7 +73,7 @@
             <div class="col-md-4">
               <button class="btn btn-primary btn-sm">Aplicar Cupom</button>
             </div>
-          </div>
+          </div>-->
         </div>
         <div class="col-md-6 pl-5">
           <div class="row justify-content-end">
@@ -89,7 +88,7 @@
                   <span class="text-black">Subtotal</span>
                 </div>
                 <div class="col-md-6 text-right">
-                  <strong class="text-black">R$ 469,80</strong>
+                  <strong class="text-black">R$ {{ total }}</strong>
                 </div>
               </div>
 

@@ -38,14 +38,13 @@
                   <button
                     class="btn btn-outline-primary js-btn-minus"
                     type="button"
-                    @click="minus()"
+                    @click="quantity > 1 ? minus() : null"
                   >&minus;</button>
-                </div>-todo-
+                </div>
                 <input
                   type="text"
                   class="form-control text-center"
                   :value="quantity"
-                  placeholder
                   aria-label="Example text with button addon"
                   aria-describedby="button-addon1"
                 >
@@ -53,7 +52,7 @@
                   <button
                     class="btn btn-outline-primary js-btn-plus"
                     type="button"
-                    @click="plus()"
+                    @click="quantity < 9 ? plus() : null"
                   >&plus;</button>
                 </div>
               </div>
@@ -72,12 +71,12 @@
 import api from "@/api";
 
 export default {
-  name: "ListaCarrinho",
-  props: ["quantity"],
+  name: "ListaProdutos",
   data: function() {
     return {
       proId: this.$route.params.Pid,
-      produtos: []
+      produtos: [],
+      quantity: 1
     };
   },
   async created() {
@@ -85,14 +84,11 @@ export default {
     this.produtos = data;
   },
   methods: {
-    // TODO plus e minus faltam alterar no banco e limitar > 0 e < itens disponíveis
     plus() {
       this.quantity = this.quantity + 1;
-      this.total = parseFloat(this.price) * parseFloat(this.quantity);
     },
     minus() {
       this.quantity = this.quantity - 1;
-      this.total = parseFloat(this.price) * parseFloat(this.quantity);
     }
   }
 };
